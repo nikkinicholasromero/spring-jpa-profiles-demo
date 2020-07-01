@@ -20,7 +20,7 @@ public class EmployeeService {
                 .collect(Collectors.toList());
     }
 
-    public Employee findById(Integer id) {
+    public Employee findById(int id) {
         return employeeRepository.findById(id).orElse(new Employee());
     }
 
@@ -32,9 +32,9 @@ public class EmployeeService {
         employeeRepository.save(employee);
     }
 
-    public void delete(String id) {
+    public void delete(int id) {
         Employee employee = new Employee();
-        employee.setId(Integer.parseInt(id));
+        employee.setId(id);
 
         employeeRepository.delete(employee);
     }
